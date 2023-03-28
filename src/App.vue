@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+      <div>{{env}}</div>
+      <div>{{nodeEnv}}</div>
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +9,16 @@
     <router-view/>
   </div>
 </template>
+<script>
+export default {
+    data(){
+        return {
+            nodeEnv: process.env.NODE_ENV,
+            env: process.env.ENV
+        }
+    }
+}
+</script>
 
 <style lang="scss">
 #app {
